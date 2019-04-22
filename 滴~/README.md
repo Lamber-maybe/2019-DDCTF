@@ -1,8 +1,11 @@
 # 滴~
+
 ## 第一步：分析URL
 观察url，对其进行解码，发现是文件包含。直接读index.php查看源码
-![Alt text](./1555401396176.png)
-![Alt text](./1555401688259.png)
+
+![](https://github.com/LambGod/2019-DDCTF/blob/master/%E6%BB%B4~/image/index.png)
+
+![](https://github.com/LambGod/2019-DDCTF/blob/master/%E6%BB%B4~/image/decode.png)
 
 ```php
 <?php
@@ -35,10 +38,12 @@ echo "<img src='data:image/gif;base64,".$txt."'></img>";
 
 ## 第二步：社工（干死出题人的脑洞）
 观察源代码的注释部分，题目给了一篇博客地址，然后给了一个日期。前往那个博客，在博主的主页发现了的确有一篇在2018.7.4日发的博客。然后找到一个文件名，读他！(注意最开头的那个点号是不加的)。得到`f1ag!ddctf.php`
-![Alt text](./1555402429440.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/%E6%BB%B4~/image/social.png)
 
 ## 第三步：分析源码
 拿到`f1ag!ddctf.php`之后，我们慢下来分析一下第一步拿到的源码。发现源码中把所有的非数字、字母、点号全部过滤掉了。然后有个字符替换将`!`替换为`config`。所以我们读`f1agconfigddctf.php`即可，拿到源码
+
 ```php
 <?php
 include('config.php');
@@ -58,6 +63,9 @@ if(isset($uid))
 }
 ?>
 ```
+
 发现代码中利用`file_get_contents`函数读取字符串，其返回值应该为NULL，那么如果uid也为NULL则能使其相等
-![Alt text](./1555403325750.png)
+
+![](https://github.com/LambGod/2019-DDCTF/blob/master/%E6%BB%B4~/image/payload.png)
+
 flag: DDCTF{436f6e67726174756c6174696f6e73}
