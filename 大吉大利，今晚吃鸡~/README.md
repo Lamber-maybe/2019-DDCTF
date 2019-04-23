@@ -2,14 +2,19 @@
 
 ## 第一步：买票
 在购买(添加至购物车)界面，发现有一个js整型溢出
-![Alt text](./1555404883773.png)
-![Alt text](./1555405066813.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/%E5%A4%A7%E5%90%89%E5%A4%A7%E5%88%A9%EF%BC%8C%E4%BB%8A%E6%99%9A%E5%90%83%E9%B8%A1~/image/buy_ticket1.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/%E5%A4%A7%E5%90%89%E5%A4%A7%E5%88%A9%EF%BC%8C%E4%BB%8A%E6%99%9A%E5%90%83%E9%B8%A1~/image/buy_ticket2.png)
+
 然后再点击支付就可以购买到门票并进入游戏(虽然前台显示的需要支付的数字很大，但是实际上只用花1元钱)
-![Alt text](./1555405145236.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/%E5%A4%A7%E5%90%89%E5%A4%A7%E5%88%A9%EF%BC%8C%E4%BB%8A%E6%99%9A%E5%90%83%E9%B8%A1~/image/success.png)
 
 ## 第二步：杀人
 点击移除对手，发现要杀一个人需要`id`与`ticket`
-![Alt text](./1555405345269.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/%E5%A4%A7%E5%90%89%E5%A4%A7%E5%88%A9%EF%BC%8C%E4%BB%8A%E6%99%9A%E5%90%83%E9%B8%A1~/image/kill.png)
 
 ## 第三步：全自动脚本
 整体思路如下：
@@ -60,5 +65,7 @@ for i in range(513000000,600000000):
 ```
 
 最后拿到flag
-![Alt text](./1555240222463.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/%E5%A4%A7%E5%90%89%E5%A4%A7%E5%88%A9%EF%BC%8C%E4%BB%8A%E6%99%9A%E5%90%83%E9%B8%A1~/image/win.png)
+
 flag: DDCTF{chiken_dinner_hyMCX[n47Fx)}
