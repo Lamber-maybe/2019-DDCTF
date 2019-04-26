@@ -3,11 +3,14 @@
 ## 第一步：观察题目
 
 随便上传一个文件，发现只允许上传JPG/GIF/PNG格式的图片
-![Alt text](./1556111529318.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/Upload-IMG/image/index.png)
 
 然后我们上传一张jpg图片然后再下载下来，对比发现。上传过后的图片经过了GD库的渲染。而题目要求是图片中包含有phpinfo字段。此时利用脚本来绕过GD库的渲染，脚本如下
-![Alt text](./1556111633176.png)
-![Alt text](./1556111646577.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/Upload-IMG/image/upload.png)
+
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/Upload-IMG/image/download.png)
 
 
 **jpg_upload.php**
@@ -190,6 +193,6 @@
 
 利用脚本生成的图片再上传上去，就可以得到flag了(没成功就多试几次)
 
-![Alt text](./1556112908699.png)
+![Alt text](https://github.com/LambGod/2019-DDCTF/blob/master/Upload-IMG/image/flag.png)
 
 flag: DDCTF{B3s7_7ry_php1nf0_b610c5a25a539fad}
